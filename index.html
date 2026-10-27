@@ -1,0 +1,136 @@
+
+<div class="app">
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">♫</div>
+      <h1>beat player</h1>
+    </div>
+    <div class="status"><span class="status-dot"></span> STUDIO READY</div>
+  </header>
+
+  <section class="welcome">
+    <div>
+      <p class="eyebrow">YOUR PERSONAL MUSIC STUDIO</p>
+      <h2>Make something<br><span>that sounds like you.</span></h2>
+      <p class="subtitle">Create beats, play instruments and generate melodies.</p>
+    </div>
+    <div class="music-icon">♫</div>
+  </section>
+
+  <section class="transport panel">
+    <div class="transport-buttons">
+      <button id="playBtn" class="btn primary">▶ Play Beat</button>
+      <button id="stopBtn" class="btn">■ Stop Beat</button>
+      <button id="clearBtn" class="btn">↺ Clear</button>
+    </div>
+    <div class="control">
+      <label for="tempo">TEMPO <strong id="tempoValue">110 BPM</strong></label>
+      <input id="tempo" type="range" min="60" max="180" value="110">
+    </div>
+    <div class="control">
+      <label for="masterVolume">MASTER VOLUME <strong id="volumeValue">70%</strong></label>
+      <input id="masterVolume" type="range" min="0" max="100" value="70">
+    </div>
+    <div class="control">
+      <label for="swing">SWING <strong id="swingValue">0%</strong></label>
+      <input id="swing" type="range" min="0" max="60" value="0">
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">01 / RHYTHM</p>
+        <h3>Drum machine</h3>
+      </div>
+      <span class="tag">16 STEP SEQUENCER</span>
+    </div>
+    <p class="hint">Click the squares to activate drum sounds.</p>
+    <div class="sequencer-wrap">
+      <div id="sequencer" class="sequencer"></div>
+    </div>
+    <div class="step-legend">
+      <span><i class="legend-active"></i> Active beat</span>
+      <span><i class="legend-playing"></i> Current step</span>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">02 / MELODY</p>
+        <h3>Play an instrument</h3>
+      </div>
+      <span class="tag">LIVE KEYS</span>
+    </div>
+
+    <div class="instrument-selector">
+      <label for="instrumentSelect">INSTRUMENT</label>
+      <select id="instrumentSelect">
+        <option value="piano">🎹 Grand Piano</option>
+        <option value="guitar">🎸 Electric Guitar</option>
+        <option value="bass">🎸 Bass Guitar</option>
+        <option value="synth">🎛️ Synth Lead</option>
+        <option value="bells">🔔 Bells</option>
+        <option value="strings">🎻 Strings</option>
+        <option value="organ">🎹 Organ</option>
+      </select>
+      <span id="instrumentDescription">Warm, classic piano tones</span>
+    </div>
+
+    <p class="hint">Click the keys or use A W S E D F T G Y H U J K on your keyboard.</p>
+    <div id="piano" class="piano"></div>
+
+    <div class="melody-box">
+      <p class="eyebrow">RANDOM MELODY GENERATOR</p>
+      <h3>Let Beat Player compose for you.</h3>
+      <p class="hint">Create a new melody every time. The selected instrument plays the notes.</p>
+
+      <div class="melody-controls">
+        <button id="randomMelodyBtn" class="btn primary">✨ Generate Random Melody</button>
+        <button id="stopMelodyBtn" class="btn">■ Stop Melody</button>
+        <label class="melody-option">
+          Notes
+          <select id="melodyLength">
+            <option value="8">8</option>
+            <option value="16" selected>16</option>
+            <option value="24">24</option>
+            <option value="32">32</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="octave-controls">
+      <button id="octaveDown" class="btn small">− Octave</button>
+      <span id="octaveLabel">OCTAVE 4</span>
+      <button id="octaveUp" class="btn small">+ Octave</button>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">03 / MIX</p>
+        <h3>Drum volumes</h3>
+      </div>
+    </div>
+    <div id="mixer" class="mixer"></div>
+  </section>
+
+  <section class="panel project-panel">
+    <div>
+      <p class="eyebrow">04 / YOUR CREATION</p>
+      <h3>Project tools</h3>
+      <p class="hint">Download your drum pattern and settings as a project file.</p>
+    </div>
+    <div class="project-buttons">
+      <button id="saveBtn" class="btn primary">↓ Save project</button>
+      <button id="loadBtn" class="btn">↑ Load project</button>
+      <input id="loadFile" type="file" accept=".json,application/json" hidden>
+    </div>
+    <p id="message" class="message" aria-live="polite"></p>
+  </section>
+
+  <footer>BEAT PLAYER <span>•</span> MAKE YOUR OWN SOUND</footer>
+</div>
